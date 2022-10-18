@@ -20,10 +20,13 @@ btn.addEventListener('click', function onClick(event) {
 
 function returnTextSize(){
   let input = document.getElementById("textsize").value;
-  document.getElementById('test').style.fontSize = input;
+  let body_var = document.getElementsByTagName("body")[0]; // https://stackoverflow.com/questions/16460990/change-text-font-size-of-whole-page-content
+  body_var.style.fontSize = input;
+
 }
 
 function returnTextSpacing(){
   let input = document.getElementById("textsize").value;
-  document.getElementById('test').style.letterSpacing = input;
+  let body_var = document.getElementsByTagName("body")[0]; // https://stackoverflow.com/questions/16460990/change-text-font-size-of-whole-page-content
+  body_var.style.letterSpacing = input;
 }
