@@ -1,18 +1,50 @@
-
-
 <html>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="styles.css">
 
 <head>
 
-text head
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <img src="Assets/logo.png" height="40" width="40"></img>
+    <a class="navbar-brand" href="#">Professor Algorithm</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
 
 </head>
 
 <body>
 
-text body
-i added this to the body
+<button type="button" id="darkmode" class="btn btn-primary">Toggle Darkmode</button>
+
+<p>Enter text size:</p>
+    <input id="textsize" type="text" placeholder="Text">
+    <button onclick="returnTextSize()">Submit</button>
+
+<p>Enter text spacing:</p>
+    <input id="textspacing" type="text" placeholder="Text">
+    <button onclick="returnTextSpacing()">Submit</button>
+
+<p id="test">this is some text! wow!</p>
+
+<a type="button" class="btn btn-primary" href="example_algorithm.html">Go to algorithm page</a>
+
+<script src="script.js"></script>
 
 </body>
 
