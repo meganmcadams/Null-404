@@ -84,9 +84,11 @@ btn_darkmode.addEventListener('click', function onClick(event) {
 
 function setTextSize(){
   
-  let input = document.getElementById("textsize").value;
-  r.style.setProperty('--text-size',input);
-  localStorage.setItem('text_size', JSON.stringify(input)); // https://stackoverflow.com/questions/29986657/persist-variables-between-page-loads
+  text_size = document.getElementById("textsize").value;
+  text_size = text_size.toString() + "px";
+  console.log(text_size);
+  r.style.setProperty('--text-size',text_size);
+  localStorage.setItem('text_size', JSON.stringify(text_size)); // https://stackoverflow.com/questions/29986657/persist-variables-between-page-loads
 
 }
 
@@ -111,9 +113,10 @@ btn_textsize_down.addEventListener('click', function onClick(event) {
 });
 
 function setTextSpacing(){
-  let input = document.getElementById("textspacing").value;
-  r.style.setProperty('--text-spacing',input);
-  localStorage.setItem('text_spacing', JSON.stringify(input)); // https://stackoverflow.com/questions/29986657/persist-variables-between-page-loads
+  let text_spacing = document.getElementById("textspacing").value;
+  text_spacing = text_spacing.toString() + "px"
+  r.style.setProperty('--text-spacing',text_spacing);
+  localStorage.setItem('text_spacing', JSON.stringify(text_spacing)); // https://stackoverflow.com/questions/29986657/persist-variables-between-page-loads
 
 }
 
