@@ -9,6 +9,9 @@
     --primary: #003587;
     --secondary: #0086c2;
 
+    --text-size: 14px;
+    --text-spacing: 1px;
+
 }
 
 head {
@@ -22,5 +25,13 @@ body {
 
     background-color:  var(--bg-colour);
     color: var(--text-colour);
+    font-size: var(--text-size);
+    letter-spacing: var(--text-spacing);
+
+}
+
+.element_box {
+
+    padding: 1rem;
 
 }

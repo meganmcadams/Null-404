@@ -9,6 +9,13 @@ if(first_time == null){
   var darkmode = false;
   localStorage.setItem('first_time', JSON.stringify(first_time));
 
+  let temp = r.style.getProperty('--text-size');
+  localStorage.setItem('text_size', JSON.stringify(temp));
+
+  temp = r.style.getProperty('--text-spacing');
+  localStorage.setItem('text_spacing', JSON.stringify(temp));
+  
+
 } else {
 
   var darkmode = JSON.parse(localStorage.getItem('darkmode'));
@@ -23,6 +30,12 @@ const btn = document.getElementById('darkmode');
 const r = document.querySelector(':root'); // https://www.w3schools.com/css/css3_variables_javascript.asp
 
 // initial accessibility settings --------------------
+
+let text_size = JSON.parse(localStorage.getItem('text_size'));
+r.style.setProperty('--text-size',text_size);
+
+let text_spacing = JSON.parse(localStorage.getItem('text_spacing'));
+r.style.setProperty('--text-spacing',text_spacing);
 
 if(darkmode == true){ // dark mode
 
@@ -72,13 +85,14 @@ btn.addEventListener('click', function onClick(event) {
 function returnTextSize(){
   
   let input = document.getElementById("textsize").value;
-  let body_var = document.getElementsByTagName("body")[0]; // https://stackoverflow.com/questions/16460990/change-text-font-size-of-whole-page-content
-  body_var.style.fontSize = input;
+  r.style.setProperty('--text-size',input);
+  localStorage.setItem('text_size', JSON.stringify(input)); // https://stackoverflow.com/questions/29986657/persist-variables-between-page-loads
 
 }
 
 function returnTextSpacing(){
-  let input = document.getElementById("textsize").value;
-  let body_var = document.getElementsByTagName("body")[0]; // https://stackoverflow.com/questions/16460990/change-text-font-size-of-whole-page-content
-  body_var.style.letterSpacing = input;
+  let input = document.getElementById("textspacing").value;
+  r.style.setProperty('--text-spacing',input);
+  localStorage.setItem('text_spacing', JSON.stringify(input)); // https://stackoverflow.com/questions/29986657/persist-variables-between-page-loads
+
 }
