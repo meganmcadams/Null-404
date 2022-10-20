@@ -1,0 +1,26 @@
+:root {
+
+    --light-bg: #f5f5f5;
+    --dark-bg: #122c34;
+    --bg-colour: var(--light-bg);
+    --header-bg-colour: var(--dark-bg);
+    --header-text-colour: var(--light-bg);
+    --text-colour: var(--light-bg);
+    --primary: #003587;
+    --secondary: #0086c2;
+
+}
+
+head {
+
+    background-color: var(--header-bg-colour);
+    color: var(--header-text-colour);
+
+}
+
+body {
+
+    background-color:  var(--bg-colour);
+    color: var(--text-colour);
+
+}
