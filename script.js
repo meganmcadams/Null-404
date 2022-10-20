@@ -1,5 +1,7 @@
 // initial set up ----------------------------------------
 
+const r = document.querySelector(':root'); // https://www.w3schools.com/css/css3_variables_javascript.asp
+const cs = getComputedStyle(r); // https://www.tutorialspoint.com/get-and-set-css-variables-with-javascript
 var first_time = JSON.parse(localStorage.getItem('first_time'));
 
 if(first_time == null){
@@ -8,11 +10,9 @@ if(first_time == null){
   var darkmode = false;
   localStorage.setItem('first_time', JSON.stringify(first_time));
 
-  let temp = r.style.getProperty('--text-size');
-  localStorage.setItem('text_size', JSON.stringify(temp));
+  localStorage.setItem('text_size', JSON.stringify(cs.getPropertyValue('--text-size')));
 
-  temp = r.style.getProperty('--text-spacing');
-  localStorage.setItem('text_spacing', JSON.stringify(temp));
+  localStorage.setItem('text_spacing', JSON.stringify(cs.getPropertyValue('--text-spacing')));
   
 
 } else {
@@ -28,8 +28,6 @@ const btn_textspacing_up = document.getElementById('textspacing_up');
 const btn_textspacing_down = document.getElementById('textspacing_down');
 const btn_textsize_up = document.getElementById('textsize_up');
 const btn_textsize_down = document.getElementById('textsize_down');
-//let textsize_input = document.getElementById("textsize").value;
-const r = document.querySelector(':root'); // https://www.w3schools.com/css/css3_variables_javascript.asp
 
 // initial accessibility settings --------------------
 
@@ -94,7 +92,9 @@ function setTextSize(){
 
 btn_textsize_up.addEventListener('click', function onClick(event) {
 
-  text_size += 0.5;
+  text_size = text_size.replace("px","");
+  text_size = Number(text_size) + 0.5;
+  text_size = text_size.toString() + "px";
   r.style.setProperty('--text-size',text_size);
   localStorage.setItem('text_size', JSON.stringify(text_size)); // https://stackoverflow.com/questions/29986657/persist-variables-between-page-loads
 
@@ -102,7 +102,9 @@ btn_textsize_up.addEventListener('click', function onClick(event) {
 
 btn_textsize_down.addEventListener('click', function onClick(event) {
 
-  text_size -= 0.5;
+  text_size = text_size.replace("px","");
+  text_size = Number(text_size) - 0.5;
+  text_size = text_size.toString() + "px";
   r.style.setProperty('--text-size',text_size);
   localStorage.setItem('text_size', JSON.stringify(text_size)); // https://stackoverflow.com/questions/29986657/persist-variables-between-page-loads
 
@@ -117,7 +119,9 @@ function setTextSpacing(){
 
 btn_textspacing_up.addEventListener('click', function onClick(event) {
 
-  text_spacing += 0.5;
+  text_spacing = text_spacing.replace("px","");
+  text_spacing = Number(text_spacing) + 0.5;
+  text_spacing = text_spacing.toString() + "px";
   r.style.setProperty('--text-spacing',text_spacing);
   localStorage.setItem('text_spacing', JSON.stringify(text_spacing)); // https://stackoverflow.com/questions/29986657/persist-variables-between-page-loads
 
@@ -125,7 +129,9 @@ btn_textspacing_up.addEventListener('click', function onClick(event) {
 
 btn_textspacing_down.addEventListener('click', function onClick(event) {
 
-  text_spacing -= 0.5;
+  text_spacing = text_spacing.replace("px","");
+  text_spacing = Number(text_spacing) - 0.5;
+  text_spacing = text_spacing.toString() + "px";
   r.style.setProperty('--text-spacing',text_spacing);
   localStorage.setItem('text_spacing', JSON.stringify(text_spacing)); // https://stackoverflow.com/questions/29986657/persist-variables-between-page-loads
 
