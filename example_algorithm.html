@@ -39,7 +39,7 @@
 </nav>
 
 <br>
-<h1 class="mb-3 text-center">Comparisons</h1>
+<h1 class="mb-3 text-center">Quicksort</h1>
 <br>
 
 </head>
@@ -48,10 +48,25 @@
 
 <div class="element_box">
 
+    <h2 class="mb-3">Runtime Complexity</h2>
+    <p>
+    O(n^2)
+    </p>
+
     <h2 class="mb-3">Description</h2>
     <p>
-    Bubble sort works by iterating through the elements and switching elements
-    one-by-one that are out of order. (more text)
+    Divide and conquer algorithm. Takes elements, pivots, and partitions the given array around the selected pivot. 
+    Unstable sorting algorithm, (can be stable if it maintains the relative order of keys, typically not 
+    implemented like that), unstable due to swapping of elements according to pivot’s position without 
+    considering the original position the key was in. 
+
+    Multiple ways to pick and pivot:
+    Pick the first element of pivot
+    Pick the last element of pivot
+    Pick a random element as a pivot
+    Pick median as the pivot
+    Splits large array of data in smaller sub arrays
+
     </p>
 
 <h2 class="mb-3">Step-By-Step</h2>
