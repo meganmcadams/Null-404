@@ -9,9 +9,7 @@ if(first_time == null){
   first_time = false;
   var darkmode = false;
   localStorage.setItem('first_time', JSON.stringify(first_time));
-
   localStorage.setItem('text_size', JSON.stringify(cs.getPropertyValue('--text-size')));
-
   localStorage.setItem('text_spacing', JSON.stringify(cs.getPropertyValue('--text-spacing')));
   
 
@@ -94,7 +92,7 @@ function setTextSize(){
 btn_textsize_up.addEventListener('click', function onClick(event) {
 
   text_size = text_size.replace("px","");
-  text_size = Number(text_size) + 0.5;
+  text_size = Number(text_size) + 1;
   text_size = text_size.toString() + "px";
   r.style.setProperty('--text-size',text_size);
   localStorage.setItem('text_size', JSON.stringify(text_size)); // https://stackoverflow.com/questions/29986657/persist-variables-between-page-loads
@@ -104,7 +102,7 @@ btn_textsize_up.addEventListener('click', function onClick(event) {
 btn_textsize_down.addEventListener('click', function onClick(event) {
 
   text_size = text_size.replace("px","");
-  text_size = Number(text_size) - 0.5;
+  text_size = Number(text_size) - 1;
   text_size = text_size.toString() + "px";
   r.style.setProperty('--text-size',text_size);
   localStorage.setItem('text_size', JSON.stringify(text_size)); // https://stackoverflow.com/questions/29986657/persist-variables-between-page-loads

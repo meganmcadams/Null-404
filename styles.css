@@ -35,3 +35,19 @@ body {
     padding: 1rem;
 
 }
+
+/* buttons */
+
+.btn-primary {
+
+    background-color: var(--primary);
+    color: var(--light-bg);
+
+}
+
+.btn-secondary {
+
+    background-color: var(--secondary);
+    color: var(--light-bg);
+
+}
