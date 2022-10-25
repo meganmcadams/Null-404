@@ -2,13 +2,14 @@
 // comes from https://www.geeksforgeeks.org/bubble-sort/
 
 const btn = document.getElementById('run_algorithm');
+const result_box = document.getElementById('results');
 
 btn.addEventListener('click', function onClick(event) {
 
     arr = document.getElementById("run_algorithm").value;
     
-    bubbleSort(arr);
-
+    result = convertArrayToDisplay(bubbleSort(arr));
+    result_box.innerHTML = result;
 
   
 });
@@ -51,11 +52,23 @@ function bubbleSort(arr) {
 
 function convertArrayToDisplay(arr){
 
+    let result = "";
     let size = length(arr);
-    for(let i = 0; i < size; i++){
+    let element_size = length(arr[0]);
 
-        // put in string alongside the current pass # (aka i)
+    for(let i = 0; i < size; i++){ // for each pass
+
+        result += "Pass " + i.toString() + ": "; // add the pass #
+        for(let j = 0; j < element_size; j++){ // for each element in the current pass
+
+            result += arr[j].toString(); // add the current element
+            if(j < size - 1){ result += ", "; } // if is not the end, add a comma
+            else { result += "\n"; } // if it is the end, add a newline
+
+        }
 
     }
+
+    return result;
 
 }
