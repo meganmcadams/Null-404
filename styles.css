@@ -18,6 +18,7 @@ head {
 
     background-color: var(--header-bg-colour);
     color: var(--header-text-colour);
+    height: 10rem;
 
 }
 
@@ -30,9 +31,46 @@ body {
 
 }
 
+/* elements */
+
+.z_container {
+
+    position: relative;
+    width: 100%;
+
+}
+
+.box_lower {
+
+    position: absolute;
+    left: 50%;
+    height: 7rem;
+
+}
+
+.navbar {
+
+    height: 60px;
+
+}
+
+.sidebar_right {
+
+    width: 25rem;
+    float: right;
+    margin-left: 75%;
+    position: absolute;
+    background-color: white;
+    padding: 0rem;
+    height: 100vh;
+    margin-top: 0px;
+
+}
+
 .element_box {
 
     padding: 1rem;
+    padding-top: 7rem;
 
 }
 

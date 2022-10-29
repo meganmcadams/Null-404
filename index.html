@@ -36,31 +36,45 @@
     </div>
 </nav>
 
-<br>
-<h1 class="mb-3 text-center">Home</h1>
-<br>
+<div class="z_container">
+    <div class="box_lower">
+
+        <br>
+        <h1 class="mb-3 text-center">Home</h1>
+        <br>
+
+    </div>
+
+    <div class="sidebar_right">
+
+        <!-- Text Size -->
+            <button id="textsize_up" type="button" class="btn btn-secondary">+</button>
+            <button id="textsize_down" type="button" class="btn btn-secondary">-</button>
+            <input id="textsize" type="text" placeholder="Text Size">
+            <button onclick="setTextSize()">Submit</button>
+            <br>
+
+        <!-- Text Spacing -->
+            <button id="textspacing_up" type="button" class="btn btn-secondary">+</button>
+            <button id="textspacing_down" type="button" class="btn btn-secondary">-</button>
+            <input id="textspacing" type="text" placeholder="Text Spacing">
+            <button onclick="setTextSpacing()">Submit</button>
+            <br>
+
+        <br>
+        <button type="button" id="darkmode" class="btn btn-primary">Toggle Darkmode</button>
+
+        <p>this is some text! wow!</p>
+
+    </div>
+
+</div>
 
 </head>
 
 <body>
 
 <div class="element_box">
-
-    <button type="button" id="darkmode" class="btn btn-primary">Toggle Darkmode</button>
-
-    <p>Enter text size:</p>
-        <input id="textsize" type="text" placeholder="Text">
-        <button onclick="setTextSize()">Submit</button>
-        <button id="textsize_up" type="button" class="btn btn-secondary">+</button>
-        <button id="textsize_down" type="button" class="btn btn-secondary">-</button>
-
-    <p>Enter text spacing:</p>
-        <input id="textspacing" type="text" placeholder="Text">
-        <button onclick="setTextSpacing()">Submit</button>
-        <button id="textspacing_up" type="button" class="btn btn-secondary">+</button>
-        <button id="textspacing_down" type="button" class="btn btn-secondary">-</button>
-
-    <p id="test">this is some text! wow!</p>
 
     <a type="button" class="btn btn-primary" href="example_algorithm copy.html">Go to algorithm page</a>
 
