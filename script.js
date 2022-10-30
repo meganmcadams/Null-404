@@ -109,30 +109,39 @@ btn_textsize_down.addEventListener('click', function onClick(event) {
 
 });
 
-function setTextSpacing(){
-  text_spacing = document.getElementById("textspacing").value;
-  text_spacing = text_spacing.toString() + "px"
-  r.style.setProperty('--text-spacing',text_spacing);
-  localStorage.setItem('text_spacing', JSON.stringify(text_spacing)); // https://stackoverflow.com/questions/29986657/persist-variables-between-page-loads
-
-}
-
 btn_textspacing_up.addEventListener('click', function onClick(event) {
 
-  text_spacing = text_spacing.replace("px","");
-  text_spacing = Number(text_spacing) + 0.5;
-  text_spacing = text_spacing.toString() + "px";
-  r.style.setProperty('--text-spacing',text_spacing);
-  localStorage.setItem('text_spacing', JSON.stringify(text_spacing)); // https://stackoverflow.com/questions/29986657/persist-variables-between-page-loads
+  updateTextSpacing(-1, true, false);
 
 });
 
 btn_textspacing_down.addEventListener('click', function onClick(event) {
 
+  updateTextSpacing(-1, false, true);
+  
+});
+
+function updateTextSpacing(num, up, down){
+
   text_spacing = text_spacing.replace("px","");
-  text_spacing = Number(text_spacing) - 0.5;
+
+  if(num != -1) { // if given a number
+ 
+    text_spacing = num;
+    text_spacing = text_spacing.toString() + "px";
+  
+  } else if(up == true) {
+
+    text_spacing = Number(text_spacing) + 0.5;
+
+  } else {
+
+    text_spacing = Number(text_spacing) - 0.5;
+
+  }
+
   text_spacing = text_spacing.toString() + "px";
   r.style.setProperty('--text-spacing',text_spacing);
   localStorage.setItem('text_spacing', JSON.stringify(text_spacing)); // https://stackoverflow.com/questions/29986657/persist-variables-between-page-loads
 
-});
+}
