@@ -12,7 +12,6 @@ if(first_time == null){ // first time setup
   localStorage.setItem('text_size', JSON.stringify(cs.getPropertyValue('--text-size')));
   localStorage.setItem('text_spacing', JSON.stringify(cs.getPropertyValue('--text-spacing')));
   
-
 } 
 
 // initial variable settings ------------------------------
@@ -71,30 +70,19 @@ function updateDarkMode(toggle){
 
 function setTextSize(){
   
-  text_size = document.getElementById("textsize").value;
-  text_size = text_size.toString() + "px";
-  r.style.setProperty('--text-size',text_size);
-  localStorage.setItem('text_size', JSON.stringify(text_size)); // https://stackoverflow.com/questions/29986657/persist-variables-between-page-loads
-
+  updateTextSize(1, false, false);
+  
 }
 
 btn_textsize_up.addEventListener('click', function onClick(event) {
 
-  text_size = text_size.replace("px","");
-  text_size = Number(text_size) + 1;
-  text_size = text_size.toString() + "px";
-  r.style.setProperty('--text-size',text_size);
-  localStorage.setItem('text_size', JSON.stringify(text_size)); // https://stackoverflow.com/questions/29986657/persist-variables-between-page-loads
+  updateTextSize(-1, true, false);
 
 });
 
 btn_textsize_down.addEventListener('click', function onClick(event) {
 
-  text_size = text_size.replace("px","");
-  text_size = Number(text_size) - 1;
-  text_size = text_size.toString() + "px";
-  r.style.setProperty('--text-size',text_size);
-  localStorage.setItem('text_size', JSON.stringify(text_size)); // https://stackoverflow.com/questions/29986657/persist-variables-between-page-loads
+  updateTextSize(-1, false, true);
 
 });
 
@@ -110,10 +98,35 @@ btn_textspacing_down.addEventListener('click', function onClick(event) {
   
 });
 
+function updateTextSize(num, up, down){
+
+  text_size = text_size.replace("px","");
+
+  if(num != -1) { // if given a number
+ 
+    text_size = document.getElementById('textsize').value;
+  
+  } else if(up == true) {
+
+    text_size = Number(text_spacing) + 0.5;
+
+  } else {
+
+    text_size = Number(text_spacing) - 0.5;
+
+  }
+
+  text_size = text_size.toString() + "px";
+  console.log("Setting",text_size);
+  r.style.setProperty('--text-size',text_size);
+  localStorage.setItem('text_size', JSON.stringify(text_size)); // https://stackoverflow.com/questions/29986657/persist-variables-between-page-loads
+
+
+}
+
 function updateTextSpacing(num, up, down){
 
   text_spacing = text_spacing.replace("px","");
-  console.log(text_spacing);
 
   if(num != -1) { // if given a number
  
