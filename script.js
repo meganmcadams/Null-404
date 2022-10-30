@@ -7,7 +7,7 @@ var first_time = JSON.parse(localStorage.getItem('first_time'));
 if(first_time == null){
 
   first_time = false;
-  var darkmode = false;
+  var dark_mode = false;
   localStorage.setItem('first_time', JSON.stringify(first_time));
   localStorage.setItem('text_size', JSON.stringify(cs.getPropertyValue('--text-size')));
   localStorage.setItem('text_spacing', JSON.stringify(cs.getPropertyValue('--text-spacing')));
@@ -15,13 +15,13 @@ if(first_time == null){
 
 } else {
 
-  var darkmode = JSON.parse(localStorage.getItem('darkmode'));
+  var dark_mode = JSON.parse(localStorage.getItem('dark_mode'));
 
 }
 
 // initial variable settings ------------------------------
 
-const btn_darkmode = document.getElementById('darkmode');
+const btn_dark_mode = document.getElementById('dark_mode');
 const btn_textspacing_up = document.getElementById('textspacing_up');
 const btn_textspacing_down = document.getElementById('textspacing_down');
 const btn_textsize_up = document.getElementById('textsize_up');
@@ -35,7 +35,7 @@ r.style.setProperty('--text-size',text_size);
 let text_spacing = JSON.parse(localStorage.getItem('text_spacing'));
 r.style.setProperty('--text-spacing',text_spacing);
 
-if(darkmode == true){ // dark mode
+if(dark_mode == true){ // dark mode
 
   r.style.setProperty('--bg-colour', 'var(--dark-bg)'); // https://www.w3schools.com/css/css3_variables_javascript.asp
   r.style.setProperty('--text-colour','var(--light-bg)');
@@ -53,18 +53,18 @@ if(darkmode == true){ // dark mode
 
 // functions --------------------------------------------------
 
-btn_darkmode.addEventListener('click', function onClick(event) {
+btn_dark_mode.addEventListener('click', function onClick(event) {
   // 👇️ change background color
 
-  if(darkmode == true){
+  if(dark_mode == true){
 
     r.style.setProperty('--bg-colour', 'var(--light-bg)'); // https://www.w3schools.com/css/css3_variables_javascript.asp
     r.style.setProperty('--text-colour','var(--dark-bg)');
     r.style.setProperty('--header-bg-colour', 'var(--dark-bg)');
     r.style.setProperty('--header-text-colour','var(--light-bg)');
 
-    darkmode = false;
-    localStorage.setItem('darkmode', JSON.stringify(darkmode)); // https://stackoverflow.com/questions/29986657/persist-variables-between-page-loads
+    dark_mode = false;
+    localStorage.setItem('dark_mode', JSON.stringify(dark_mode)); // https://stackoverflow.com/questions/29986657/persist-variables-between-page-loads
 
   } else {
 
@@ -73,8 +73,8 @@ btn_darkmode.addEventListener('click', function onClick(event) {
     r.style.setProperty('--header-bg-colour', 'var(--light-bg)');
     r.style.setProperty('--header-text-colour','var(--dark-bg)');
 
-    darkmode = true;
-    localStorage.setItem('darkmode', JSON.stringify(darkmode)); // https://stackoverflow.com/questions/29986657/persist-variables-between-page-loads
+    dark_mode = true;
+    localStorage.setItem('dark_mode', JSON.stringify(dark_mode)); // https://stackoverflow.com/questions/29986657/persist-variables-between-page-loads
 
   }
 
