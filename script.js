@@ -2,22 +2,18 @@
 
 const r = document.querySelector(':root'); // https://www.w3schools.com/css/css3_variables_javascript.asp
 const cs = getComputedStyle(r); // https://www.tutorialspoint.com/get-and-set-css-variables-with-javascript
-var first_time = JSON.parse(localStorage.getItem('first_time'));
+let first_time = JSON.parse(localStorage.getItem('first_time'));
 
-if(first_time == null){
+if(first_time == null){ // first time setup
 
   first_time = false;
-  var dark_mode = false;
   localStorage.setItem('first_time', JSON.stringify(first_time));
+  localStorage.setItem('dark_mode', false);
   localStorage.setItem('text_size', JSON.stringify(cs.getPropertyValue('--text-size')));
   localStorage.setItem('text_spacing', JSON.stringify(cs.getPropertyValue('--text-spacing')));
   
 
-} else {
-
-  var dark_mode = JSON.parse(localStorage.getItem('dark_mode'));
-
-}
+} 
 
 // initial variable settings ------------------------------
 
@@ -34,6 +30,8 @@ r.style.setProperty('--text-size',text_size);
 
 let text_spacing = JSON.parse(localStorage.getItem('text_spacing'));
 r.style.setProperty('--text-spacing',text_spacing);
+
+let dark_mode = JSON.parse(localStorage.getItem('dark_mode'));
 
 updateDarkMode(false);
 
