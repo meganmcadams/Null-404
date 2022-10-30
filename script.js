@@ -35,50 +35,41 @@ r.style.setProperty('--text-size',text_size);
 let text_spacing = JSON.parse(localStorage.getItem('text_spacing'));
 r.style.setProperty('--text-spacing',text_spacing);
 
-if(dark_mode == true){ // dark mode
-
-  r.style.setProperty('--bg-colour', 'var(--dark-bg)'); // https://www.w3schools.com/css/css3_variables_javascript.asp
-  r.style.setProperty('--text-colour','var(--light-bg)');
-  r.style.setProperty('--header-bg-colour', 'var(--light-bg)');
-  r.style.setProperty('--header-text-colour','var(--dark-bg)');
-
-} else { // light mode
-
-  r.style.setProperty('--bg-colour', 'var(--light-bg)'); // https://www.w3schools.com/css/css3_variables_javascript.asp
-  r.style.setProperty('--text-colour','var(--dark-bg)');
-  r.style.setProperty('--header-bg-colour', 'var(--dark-bg)');
-  r.style.setProperty('--header-text-colour','var(--light-bg)');
-
-}
+updateDarkMode(false);
 
 // functions --------------------------------------------------
 
 btn_dark_mode.addEventListener('click', function onClick(event) {
-  // 👇️ change background color
+  
+  updateDarkMode(true);
 
-  if(dark_mode == true){
+});
 
-    r.style.setProperty('--bg-colour', 'var(--light-bg)'); // https://www.w3schools.com/css/css3_variables_javascript.asp
-    r.style.setProperty('--text-colour','var(--dark-bg)');
-    r.style.setProperty('--header-bg-colour', 'var(--dark-bg)');
-    r.style.setProperty('--header-text-colour','var(--light-bg)');
+function updateDarkMode(toggle){
 
-    dark_mode = false;
-    localStorage.setItem('dark_mode', JSON.stringify(dark_mode)); // https://stackoverflow.com/questions/29986657/persist-variables-between-page-loads
+  if (toggle == true) { // if should toggle
+    dark_mode = !dark_mode; // toggle
+  }
 
-  } else {
+  if(dark_mode == true){ // dark mode
 
     r.style.setProperty('--bg-colour', 'var(--dark-bg)'); // https://www.w3schools.com/css/css3_variables_javascript.asp
     r.style.setProperty('--text-colour','var(--light-bg)');
     r.style.setProperty('--header-bg-colour', 'var(--light-bg)');
     r.style.setProperty('--header-text-colour','var(--dark-bg)');
-
-    dark_mode = true;
-    localStorage.setItem('dark_mode', JSON.stringify(dark_mode)); // https://stackoverflow.com/questions/29986657/persist-variables-between-page-loads
-
+  
+  } else { // light mode
+  
+    r.style.setProperty('--bg-colour', 'var(--light-bg)'); // https://www.w3schools.com/css/css3_variables_javascript.asp
+    r.style.setProperty('--text-colour','var(--dark-bg)');
+    r.style.setProperty('--header-bg-colour', 'var(--dark-bg)');
+    r.style.setProperty('--header-text-colour','var(--light-bg)');
+  
   }
 
-});
+  localStorage.setItem('dark_mode', JSON.stringify(dark_mode)); // https://stackoverflow.com/questions/29986657/persist-variables-between-page-loads
+
+}
 
 function setTextSize(){
   
