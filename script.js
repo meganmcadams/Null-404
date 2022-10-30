@@ -117,10 +117,8 @@ function updateTextSize(num, up, down){
   }
 
   text_size = text_size.toString() + "px";
-  console.log("Setting",text_size);
   r.style.setProperty('--text-size',text_size);
   localStorage.setItem('text_size', JSON.stringify(text_size)); // https://stackoverflow.com/questions/29986657/persist-variables-between-page-loads
-
 
 }
 
