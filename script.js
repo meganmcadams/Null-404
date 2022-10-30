@@ -124,11 +124,11 @@ btn_textspacing_down.addEventListener('click', function onClick(event) {
 function updateTextSpacing(num, up, down){
 
   text_spacing = text_spacing.replace("px","");
+  console.log(text_spacing);
 
   if(num != -1) { // if given a number
  
-    text_spacing = num;
-    text_spacing = text_spacing.toString() + "px";
+    text_spacing = document.getElementById('textspacing').value;
   
   } else if(up == true) {
 
@@ -141,6 +141,7 @@ function updateTextSpacing(num, up, down){
   }
 
   text_spacing = text_spacing.toString() + "px";
+  console.log("Setting",text_spacing);
   r.style.setProperty('--text-spacing',text_spacing);
   localStorage.setItem('text_spacing', JSON.stringify(text_spacing)); // https://stackoverflow.com/questions/29986657/persist-variables-between-page-loads
 
