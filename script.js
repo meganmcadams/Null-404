@@ -71,7 +71,7 @@ function updateDarkMode(toggle){
 function setTextSize(){
   
   updateTextSize(1, false, false);
-  
+
 }
 
 btn_textsize_up.addEventListener('click', function onClick(event) {
@@ -108,11 +108,11 @@ function updateTextSize(num, up, down){
   
   } else if(up == true) {
 
-    text_size = Number(text_spacing) + 0.5;
+    text_size = Number(text_size) + 0.5;
 
   } else {
 
-    text_size = Number(text_spacing) - 0.5;
+    text_size = Number(text_size) - 0.5;
 
   }
 
