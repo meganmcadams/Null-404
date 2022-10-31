@@ -2,12 +2,10 @@
 
 const r = document.querySelector(':root'); // https://www.w3schools.com/css/css3_variables_javascript.asp
 const cs = getComputedStyle(r); // https://www.tutorialspoint.com/get-and-set-css-variables-with-javascript
-let first_time = JSON.parse(localStorage.getItem('first_time'));
 
-if(first_time == null){ // first time setup
+if(JSON.parse(localStorage.getItem('first_time')) == null){ // first time setup
 
-  first_time = false;
-  localStorage.setItem('first_time', JSON.stringify(first_time));
+  localStorage.setItem('first_time', JSON.stringify(false));
   localStorage.setItem('dark_mode', false);
   localStorage.setItem('text_size', JSON.stringify(cs.getPropertyValue('--text-size')));
   localStorage.setItem('text_spacing', JSON.stringify(cs.getPropertyValue('--text-spacing')));
@@ -21,6 +19,9 @@ const btn_textspacing_up = document.getElementById('textspacing_up');
 const btn_textspacing_down = document.getElementById('textspacing_down');
 const btn_textsize_up = document.getElementById('textsize_up');
 const btn_textsize_down = document.getElementById('textsize_down');
+const btn_close_sidebar = document.getElementById('close_sidebar');
+const sidebar = document.getElementById('sidebar');
+const sidebar_btn = document.getElementById('sidebar_btn');
 
 // initial accessibility settings --------------------
 
@@ -32,9 +33,29 @@ r.style.setProperty('--text-spacing',text_spacing);
 
 let dark_mode = JSON.parse(localStorage.getItem('dark_mode'));
 
+let sidebar_out = false;
+
 updateDarkMode(false);
 
 // functions --------------------------------------------------
+
+function toggleSidebar(){
+
+  sidebar_out = !sidebar_out; // toggle
+
+  if (sidebar_out == true){
+
+    sidebar.style.display = "block";
+    sidebar_btn.style.marginRight = "1rem";
+
+  } else {
+
+    sidebar.style.display = "none";
+    sidebar_btn.style.marginRight = "-24rem";
+
+  }
+
+}
 
 btn_dark_mode.addEventListener('click', function onClick(event) {
   

@@ -50,20 +50,32 @@ body {
 
 .navbar {
 
-    height: 60px;
+    height: 8vh;
 
 }
 
-.sidebar_right {
+.sidebar {
 
     width: 25rem;
-    float: right;
-    margin-left: 75%;
+    right: 0;
     position: absolute; /* https://dev.to/lennythedev/css-gotcha-how-to-fill-page-with-a-div-270j */
     background-color: white;
     padding: 1rem;
-    height: 100vh; /* https://dev.to/lennythedev/css-gotcha-how-to-fill-page-with-a-div-270j */
-    margin-top: 0px;
+    height: 92vh; /* https://dev.to/lennythedev/css-gotcha-how-to-fill-page-with-a-div-270j */
+
+    display: none; /* default to off */
+
+}
+
+.sidebar_btn {
+
+    float:right;
+    position: absolute;
+    right: 25rem;
+    margin-top: 20%;
+    height: 2rem;
+
+    margin-right: -24rem; /* default to off */
 
 }
 
