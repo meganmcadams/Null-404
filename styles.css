@@ -11,6 +11,7 @@
 
     --text-size: 14px;
     --text-spacing: 1px;
+    --icon-filter: brightness(120%); /* default is white */
 
 }
 
@@ -67,6 +68,12 @@ body {
 
 }
 
+.static_colour_black {
+
+    color: black !important;
+
+}
+
 .sidebar_btn {
 
     float:right;
@@ -76,6 +83,8 @@ body {
     height: 2rem;
 
     margin-right: -24rem; /* default to off */
+
+    filter: var(--icon-filter);
 
 }
 

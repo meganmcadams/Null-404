@@ -75,6 +75,7 @@ function updateDarkMode(toggle){
     r.style.setProperty('--text-colour','var(--light-bg)');
     r.style.setProperty('--header-bg-colour', 'var(--light-bg)');
     r.style.setProperty('--header-text-colour','var(--dark-bg)');
+    r.style.setProperty('--icon-filter', 'brightness(120%)');
   
   } else { // light mode
   
@@ -82,6 +83,7 @@ function updateDarkMode(toggle){
     r.style.setProperty('--text-colour','var(--dark-bg)');
     r.style.setProperty('--header-bg-colour', 'var(--dark-bg)');
     r.style.setProperty('--header-text-colour','var(--light-bg)');
+    r.style.setProperty('--icon-filter', 'brightness(0%)');
   
   }
 
