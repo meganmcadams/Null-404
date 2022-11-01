@@ -15,6 +15,21 @@
 
 }
 
+/* navbar modifictions */
+
+.navbar-nav {
+    background-color: var(--light-bg) !important;
+    position:absolute;
+    z-index: 9;
+    padding: 0.5rem;
+}
+
+.navbar {
+    background-color: var(--light-bg) !important;
+}
+
+/* head and body */
+
 head {
 
     background-color: var(--header-bg-colour);
@@ -44,7 +59,8 @@ body {
 .box_lower {
 
     position: absolute; /* https://dev.to/lennythedev/css-gotcha-how-to-fill-page-with-a-div-270j */
-    left: 50%;
+    left: 50%; /* https://thoughtbot.com/blog/positioning */
+    margin-left: -50px; /* https://thoughtbot.com/blog/positioning */
     height: 7rem;
 
 }
@@ -78,10 +94,11 @@ body {
     float:right;
     position: absolute;
     right: 25rem;
-    margin-top: 20%;
     height: 2rem;
 
     margin-right: -24rem; /* default to off */
+
+    margin-top: 50vh;
 
     filter: var(--icon-filter);
 

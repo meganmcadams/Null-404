@@ -10,7 +10,7 @@ if(JSON.parse(localStorage.getItem('first_time')) == null){ // first time setup
   localStorage.setItem('text_size', JSON.stringify(cs.getPropertyValue('--text-size')));
   localStorage.setItem('text_spacing', JSON.stringify(cs.getPropertyValue('--text-spacing')));
   
-} 
+}
 
 // initial variable settings ------------------------------
 
