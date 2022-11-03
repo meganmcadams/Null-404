@@ -77,7 +77,6 @@ function convertArrayToDisplay(passes){
         for(let j = 0; j < element_size; j++){ // for each element in the current pass
 
             result += passes[i][j].toString(); // add the current element
-            console.log(passes[i],"is current");
             if (j < element_size - 1) { result += ", "; } // if is not the end, add a comma
             else { result += "<br>"; } // if it is the end, add a newline
 
