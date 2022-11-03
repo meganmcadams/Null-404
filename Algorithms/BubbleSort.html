@@ -39,9 +39,41 @@
     </div>
 </nav>
 
-<br>
-<h1 class="mb-3 text-center">Bubble Sort</h1>
-<br>
+<div class="z_container">
+    <div class="box_lower">
+
+        <br>
+        <h1 class="mb-3 text-center">Bubble Sort</h1>
+        <br>
+
+    </div>
+
+    <img onclick="toggleSidebar()" id="sidebar_btn" type="image" src="../Files/LeftArrow.png" class="sidebar_btn">
+
+    <div class="sidebar" id="sidebar">
+
+        <h4 class="static_colour_black">Accessibility Settings</h4>
+
+        <!-- Text Size -->
+            <button id="textsize_up" type="button" class="btn btn-secondary">+</button>
+            <button id="textsize_down" type="button" class="btn btn-secondary">-</button>
+            <input id="textsize" type="text" placeholder="Text Size">
+            <button onclick="setTextSize()">Submit</button>
+            <br>
+
+        <!-- Text Spacing -->
+            <button id="textspacing_up" type="button" class="btn btn-secondary">+</button>
+            <button id="textspacing_down" type="button" class="btn btn-secondary">-</button>
+            <input id="textspacing" type="text" placeholder="Text Spacing">
+            <button onclick="updateTextSpacing(1, false, false)">Submit</button>
+            <br>
+
+        <br>
+        <button type="button" id="dark_mode" class="btn btn-primary">Toggle Dark Mode</button>
+
+    </div>
+
+</div>
 
 </head>
 
@@ -49,14 +81,14 @@
 
 <div class="element_box">
 
+    <h4>Input</h4>
     <p>Enter an array (comma-separated):</p>
-    <input id="run_algorithm" type="text" placeholder="Array">
-    <button onclick="setTextSize()">Submit</button>
+    <input id="result_input" type="text" placeholder="Array">
+    <button id="run_algorithm">Submit</button>
 
     <br><br>
-    <p>Results</p>
-    <br>
-    <p id="results"></p>
+    <h4>Results</h4>
+    <p id="result_box"></p>
 
 </div>
 
