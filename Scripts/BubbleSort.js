@@ -11,7 +11,6 @@ btn.addEventListener('click', function onClick(event) {
     passes = convertArrayToDisplay(bubbleSort(arr));
     result_box.innerHTML = passes;
 
-  
 });
 
 function convertToArray(arr){

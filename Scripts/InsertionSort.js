@@ -27,57 +27,35 @@ function convertToArray(arr) {
 
 }
 
-function heapify(array, n, i) {
-    
-    big_i = i; // biggest index defaulted to i
-    left = 2 * i + 1; // left 
-    right = 2 * i + 2; // right
+function InsertionSort(arr) {
 
-    if (left < n && array[left] > array[big_i]) { // if left is new biggest
+    let passes = [[...arr]]; // initialize passes array with the original arr
 
-        big_i = left; // set biggest index to left
+    const size = arr.length;
 
-    }
+    for (let i = 0; i < size; i++) { // for every item in array
 
-    if (right < n && array[right] > array[big_i]) { // if right is new biggest
+        val = arr[i]; // set val
+        hole = i; // set hole
 
-        big_i = right; // set right to biggest
+        while (hole > 0 && arr[hole - 1] > val) { // while still in range and need to move
 
-    if big_i != i: # if biggest index isn't i
-        # swap array[i] and array[big_i]
-        temp = array[i]
-        array[i] = array[big_i];
-        array[big_i] = temp;
+            arr[hole] = arr[hole - 1]; // decrement hole
+            hole -= 1; // decrement hole index
 
-        heapify(array, n, big_i); // recursive call with biggest index
+        }
 
-    }
+        if (hole != i) {
 
-}
+            array[hole] = val
 
-function heapsort(array) {
+        }
 
-    n = array.length; // get length of array
-
-    i = n; // 2 - 1 # set i
-    while (i >= 0) {
-
-        heapify(array, n, i);
-        i -= 1; // decrement i
+        passes.push([...arr]);
 
     }
 
-    i = n - 1
-    while (i > 0) {
-        // swap array[0] and array[i]
-        temp = array[0]
-        array[0] = array[i]
-        array[i] = temp
-
-        heapify(array, i, 0);
-        i -= 1; // decrement i
-
-    }
+    return passes;
 
 }
 

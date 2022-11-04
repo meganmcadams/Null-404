@@ -97,10 +97,24 @@ body {
     height: 2rem;
 
     margin-right: -24rem; /* default to off */
+    transform: rotate(0deg);
 
     margin-top: 50vh;
 
     filter: var(--icon-filter);
+
+}
+
+.sidebar_img {
+
+    float:right;
+    position: absolute;
+    right: 25rem;
+    height: 3rem;
+
+    margin-right: -23rem; /* default to off */
+
+    margin-top: 49vh;
 
 }
 

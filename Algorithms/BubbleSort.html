@@ -6,38 +6,43 @@
 
 <head>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <img src="Assets/logo.png" height="40" width="40"></img>
-    <a class="navbar-brand" href="#">Professor Algorithm</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="../index.html">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Accessibility</a>
-            </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="../About.html">About<span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Algorithm List</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="../Comparisons.html">Comparisons</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="../Resources.html">Resources</a>
-            </li>
-            
-        </ul>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <img src="../Assets/logo.png" height="40" width="40"></img>
+        <a class="navbar-brand" href="#">Professor Algorithm</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
         
-    </div>
-</nav>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="../index.html">Home<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../About.html">About</a>
+                </li>
+                
+                <li class="nav-item dropdown"> <!-- https://getbootstrap.com/docs/4.0/components/navbar/ -->
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Algorithms
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Heapsort</a>
+                        <a class="dropdown-item active" href="../Algorithms/BubbleSort.html">Bubble Sort</a>
+                    </div>
+                </li>
+    
+                <li class="nav-item">
+                    <a class="nav-link" href="../Comparisons.html">Comparisons</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../Resources.html">Resources</a>
+                </li>
+                
+            </ul>
+            
+        </div>
+    </nav>
 
 <div class="z_container">
     <div class="box_lower">
@@ -49,6 +54,7 @@
     </div>
 
     <img onclick="toggleSidebar()" id="sidebar_btn" type="image" src="../Files/LeftArrow.png" class="sidebar_btn">
+    <img src="../Files/AccessibilityLogo.png" class="sidebar_img" id="sidebar_img">
 
     <div class="sidebar" id="sidebar">
 

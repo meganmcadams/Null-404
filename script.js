@@ -22,6 +22,7 @@ const btn_textsize_down = document.getElementById('textsize_down');
 const btn_close_sidebar = document.getElementById('close_sidebar');
 const sidebar = document.getElementById('sidebar');
 const sidebar_btn = document.getElementById('sidebar_btn');
+const sidebar_img = document.getElementById('sidebar_img');
 
 // initial accessibility settings --------------------
 
@@ -47,11 +48,15 @@ function toggleSidebar(){
 
     sidebar.style.display = "block";
     sidebar_btn.style.marginRight = "1rem";
+    sidebar_btn.style.transform = "rotate(180deg)";
+    sidebar_img.style.marginRight = "2rem";
 
   } else {
 
     sidebar.style.display = "none";
     sidebar_btn.style.marginRight = "-24rem";
+    sidebar_btn.style.transform = "rotate(0deg)";
+    sidebar_img.style.marginRight = "-23rem";
 
   }
 
