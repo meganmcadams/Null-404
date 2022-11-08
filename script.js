@@ -20,9 +20,13 @@ const btn_textspacing_down = document.getElementById('textspacing_down');
 const btn_textsize_up = document.getElementById('textsize_up');
 const btn_textsize_down = document.getElementById('textsize_down');
 const btn_close_sidebar = document.getElementById('close_sidebar');
+
 const sidebar = document.getElementById('sidebar');
 const sidebar_btn = document.getElementById('sidebar_btn');
 const sidebar_img = document.getElementById('sidebar_img');
+
+const ruler = document.getElementById('ruler');
+const title = document.getElementById('title');
 
 // initial accessibility settings --------------------
 
@@ -37,6 +41,13 @@ let dark_mode = JSON.parse(localStorage.getItem('dark_mode'));
 let sidebar_out = false;
 
 updateDarkMode(false);
+
+// initialize variables as needed --------------------------
+
+// title left value - this does nothing right now because i can't figure it out -meg
+var title_text = title.innerHTML;
+ruler.innerHTML = title_text;
+ruler.offsetWidth;
 
 // functions --------------------------------------------------
 

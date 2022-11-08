@@ -48,7 +48,7 @@
     <div class="box_lower">
 
         <br>
-        <h1 class="mb-3 text-center">Bubble Sort</h1>
+        <h1 id="title" class="mb-3 text-center">Bubble Sort</h1>
         <br>
 
     </div>
@@ -85,21 +85,34 @@
 
 <body>
 
+<span id="ruler"></span>
+
 <div class="element_box">
 
-    <h4>Input</h4>
-    <p>Enter an array (comma-separated):</p>
-    <input id="result_input" type="text" placeholder="Array">
-    <button id="run_algorithm">Submit</button>
+    <div class="element_inner_left">
+        <h4>Description</h4>
+        <p>
+        Bubble sort is a sorting algorithm that iterates through a given array and swaps two elements if the left one is bigger than the right one. Its time complexity is 
+        O(n^2) since, in the worst case scenario, it would iterate through the array n times while swapping elements at every iteration. 
+        </p>
+    </div>
 
-    <br><br>
-    <h4>Results</h4>
-    <p id="result_box"></p>
+    <div class="element_inner_right">
+        <h4>Input</h4>
+        <p>Enter an array (comma-separated):</p>
+        <input id="result_input" type="text" placeholder="Array">
+        <button id="run_algorithm">Submit</button>
+
+        <br><br>
+        <h4>Results</h4>
+        <p id="result_box"></p>
+    </div>
 
 </div>
 
     <script src="../script.js"></script>
     <script src="../Scripts/BubbleSort.js"></script>
+    <script src="../Scripts/Sort.js"></script>
     <!-- https://getbootstrap.com/docs/4.0/getting-started/introduction/ -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

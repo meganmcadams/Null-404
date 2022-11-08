@@ -13,13 +13,15 @@
     --text-spacing: 1px;
     --icon-filter: brightness(120%); /* default is white */
 
+    --title-left-correct: 50%;
+
 }
 
 /* navbar modifictions */
 
 .navbar-nav {
     background-color: var(--light-bg) !important;
-    position:absolute;
+    position: absolute;
     z-index: 9;
     padding: 0.5rem;
 }
@@ -49,6 +51,8 @@ body {
 
 /* elements */
 
+#ruler { visibility: hidden; white-space: nowrap; } /* https://blog.mastykarz.nl/measuring-the-length-of-a-string-in-pixels-using-javascript/ */
+
 .z_container {
 
     position: relative;
@@ -59,7 +63,7 @@ body {
 .box_lower {
 
     position: absolute; /* https://dev.to/lennythedev/css-gotcha-how-to-fill-page-with-a-div-270j */
-    left: 50%; /* https://thoughtbot.com/blog/positioning */
+    left: var(--title-left-correct); /* https://thoughtbot.com/blog/positioning */
     margin-left: -50px; /* https://thoughtbot.com/blog/positioning */
     height: 7rem;
 
@@ -122,6 +126,22 @@ body {
 
     padding: 1rem;
     padding-top: 7rem;
+
+}
+
+.element_inner_left {
+
+    width: 50%;
+    float: left;
+    padding: 2rem;
+
+}
+
+.element_inner_right {
+
+    width: 50%;
+    float: right;
+    padding: 2rem;
 
 }
 
