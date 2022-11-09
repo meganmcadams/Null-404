@@ -28,16 +28,17 @@ function convertArrayToDisplay(passes) {
 
     let result = "";
     let size = passes.length;
-    let element_size = passes[0].length;
+    let element_size = passes[0][0].length;
+    console.log(passes);
 
     for (let i = 0; i < size; i++) { // for each pass
 
         result += "Pass " + i.toString() + ": "; // add the pass #
         for (let j = 0; j < element_size; j++) { // for each element in the current pass
 
-            result += passes[i][j].toString(); // add the current element
+            result += passes[i][0][j].toString(); // add the current element
             if (j < element_size - 1) { result += ", "; } // if is not the end, add a comma
-            else { result += "<br>"; } // if it is the end, add a newline
+            else { result += " | " + passes[i][1] + "<br>"; } // if it is the end, add the pass desc and a newline
 
         }
 
