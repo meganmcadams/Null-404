@@ -3,6 +3,8 @@
 const r = document.querySelector(':root'); // https://www.w3schools.com/css/css3_variables_javascript.asp
 const cs = getComputedStyle(r); // https://www.tutorialspoint.com/get-and-set-css-variables-with-javascript
 
+localStorage.setItem('first_time', null);
+
 if(JSON.parse(localStorage.getItem('first_time')) == null){ // first time setup
 
   localStorage.setItem('first_time', JSON.stringify(false));
