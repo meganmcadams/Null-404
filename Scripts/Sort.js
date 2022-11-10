@@ -29,7 +29,6 @@ function convertArrayToDisplay(passes) {
     let result = "";
     let size = passes.length;
     let element_size = passes[0][0].length;
-    console.log(passes);
 
     for (let i = 0; i < size; i++) { // for each pass
 
@@ -42,7 +41,7 @@ function convertArrayToDisplay(passes) {
 
         }
 
-    }
+    } result += "Sorting complete!";
 
     return result;
 
