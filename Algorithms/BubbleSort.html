@@ -7,7 +7,7 @@
 <head>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <img src="../Assets/logo.png" height="40" width="40"></img>
+        <img class="navbar-logo" src="../Assets/logo.png" height="40" width="40"></img>
         <a class="navbar-brand" href="#">Professor Algorithm</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -44,11 +44,11 @@
         </div>
     </nav>
 
-<div class="z_container">
+<div class="z_container header">
     <div class="box_lower">
 
         <br>
-        <h1 id="title" class="mb-3 text-center">Bubble Sort</h1>
+        <h1 id="title" class="mb-3 absolute-centered">Bubble Sort</h1>
         <br>
 
     </div>
@@ -61,21 +61,21 @@
         <h4 class="static_colour_black">Accessibility Settings</h4>
 
         <!-- Text Size -->
-            <button id="textsize_up" type="button" class="btn btn-secondary">+</button>
-            <button id="textsize_down" type="button" class="btn btn-secondary">-</button>
+            <button onclick="updateTextSize(-1, true, false)" type="button" class="btn btn-secondary">+</button>
+            <button onclick="updateTextSize(-1, false, true)" type="button" class="btn btn-secondary">-</button>
             <input id="textsize" type="text" placeholder="Text Size">
             <button onclick="setTextSize()">Submit</button>
             <br>
 
         <!-- Text Spacing -->
-            <button id="textspacing_up" type="button" class="btn btn-secondary">+</button>
-            <button id="textspacing_down" type="button" class="btn btn-secondary">-</button>
+            <button onclick="updateTextSpacing(-1, true, false)" type="button" class="btn btn-secondary">+</button>
+            <button onclick="updateTextSpacing(-1, false, true)" type="button" class="btn btn-secondary">-</button>
             <input id="textspacing" type="text" placeholder="Text Spacing">
             <button onclick="updateTextSpacing(1, false, false)">Submit</button>
             <br>
 
         <br>
-        <button type="button" id="dark_mode" class="btn btn-primary">Toggle Dark Mode</button>
+        <button type="button" onclick="updateDarkMode(true)" class="btn btn-primary">Toggle Dark Mode</button>
 
     </div>
 
@@ -89,7 +89,7 @@
 
 <div class="element_box">
 
-    <div class="element_inner_left">
+    <div class="element_inner_right">
         <h4>Description</h4>
         <p>
         Bubble sort is a sorting algorithm that iterates through a given array and swaps two elements if the left one is bigger than the right one. Its time complexity is 
@@ -97,10 +97,10 @@
         </p>
     </div>
 
-    <div class="element_inner_right">
+    <div class="element_inner_left">
         <h4>Input</h4>
-        <p>Enter an array (comma-separated):</p>
-        <input id="result_input" type="text" placeholder="Array">
+        <p>Enter an array of integers (comma-separated):</p>
+        <input id="result_input" type="text" placeholder="1,2,3,4,5">
         <button id="run_algorithm">Submit</button>
 
         <br><br>
