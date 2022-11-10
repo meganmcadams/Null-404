@@ -13,12 +13,6 @@ if(JSON.parse(localStorage.getItem('first_time')) == null){ // first time setup
 }
 
 // initial variable settings ------------------------------
-
-const btn_dark_mode = document.getElementById('dark_mode');
-const btn_textspacing_up = document.getElementById('textspacing_up');
-const btn_textspacing_down = document.getElementById('textspacing_down');
-const btn_textsize_up = document.getElementById('textsize_up');
-const btn_textsize_down = document.getElementById('textsize_down');
 const btn_close_sidebar = document.getElementById('close_sidebar');
 
 const sidebar = document.getElementById('sidebar');
@@ -73,13 +67,7 @@ function toggleSidebar(){
 
 }
 
-btn_dark_mode.addEventListener('click', function onClick(event) {
-  
-  updateDarkMode(true);
-
-});
-
-function updateDarkMode(toggle){
+function updateDarkMode(toggle) {
 
   if (toggle == true) { // if should toggle
     dark_mode = !dark_mode; // toggle
@@ -88,7 +76,9 @@ function updateDarkMode(toggle){
   if(dark_mode == true){ // dark mode
 
     r.style.setProperty('--bg-colour', 'var(--dark-bg)'); // https://www.w3schools.com/css/css3_variables_javascript.asp
+    r.style.setProperty('--bg-colour-opposite', 'var(--light-bg)');
     r.style.setProperty('--text-colour','var(--light-bg)');
+    r.style.setProperty('--text-colour-opposite','var(--dark-bg)');
     r.style.setProperty('--header-bg-colour', 'var(--light-bg)');
     r.style.setProperty('--header-text-colour','var(--dark-bg)');
     r.style.setProperty('--icon-filter', 'brightness(120%)');
@@ -96,7 +86,9 @@ function updateDarkMode(toggle){
   } else { // light mode
   
     r.style.setProperty('--bg-colour', 'var(--light-bg)'); // https://www.w3schools.com/css/css3_variables_javascript.asp
+    r.style.setProperty('--bg-colour-opposite', 'var(--dark-bg)');
     r.style.setProperty('--text-colour','var(--dark-bg)');
+    r.style.setProperty('--text-colour-opposite','var(--light-bg)');
     r.style.setProperty('--header-bg-colour', 'var(--dark-bg)');
     r.style.setProperty('--header-text-colour','var(--light-bg)');
     r.style.setProperty('--icon-filter', 'brightness(0%)');
@@ -112,30 +104,6 @@ function setTextSize(){
   updateTextSize(1, false, false);
 
 }
-
-btn_textsize_up.addEventListener('click', function onClick(event) {
-
-  updateTextSize(-1, true, false);
-
-});
-
-btn_textsize_down.addEventListener('click', function onClick(event) {
-
-  updateTextSize(-1, false, true);
-
-});
-
-btn_textspacing_up.addEventListener('click', function onClick(event) {
-
-  updateTextSpacing(-1, true, false);
-
-});
-
-btn_textspacing_down.addEventListener('click', function onClick(event) {
-
-  updateTextSpacing(-1, false, true);
-  
-});
 
 function updateTextSize(num, up, down){
 
