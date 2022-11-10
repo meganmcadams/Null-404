@@ -7,7 +7,7 @@
 <head>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <img src="Assets/logo.png" height="40" width="40"></img>
+    <img class="navbar-logo" src="Assets/logo.png" height="40" width="40"></img>
     <a class="navbar-brand" href="#">Professor Algorithm</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -44,12 +44,12 @@
     </div>
 </nav>
 
-<div class="z_container">
-    <div class="box_lower">
+<div class="z_container header-home">
+    <div class="box_lower header-box">
 
-        <br>
-        <h1 id="title" class="mb-3 text-center">Home</h1>
-        <br>
+        <p class="absolute-centered text-center"> Welcome to </p>
+        <h1 id="title" class="absolute-centered text-center">Professor Algorithm</h1>
+        <p class="absolute-centered subheader-text">Learn how different sorting algorithms work, step-by-step, and test them yourself!</p>
 
     </div>
 
@@ -61,21 +61,21 @@
         <h4 class="static_colour_black">Accessibility Settings</h4>
 
         <!-- Text Size -->
-            <button id="textsize_up" type="button" class="btn btn-secondary">+</button>
-            <button id="textsize_down" type="button" class="btn btn-secondary">-</button>
+            <button onclick="updateTextSize(-1, true, false)" type="button" class="btn btn-secondary">+</button>
+            <button onclick="updateTextSize(-1, false, true)" type="button" class="btn btn-secondary">-</button>
             <input id="textsize" type="text" placeholder="Text Size">
             <button onclick="setTextSize()">Submit</button>
             <br>
 
         <!-- Text Spacing -->
-            <button id="textspacing_up" type="button" class="btn btn-secondary">+</button>
-            <button id="textspacing_down" type="button" class="btn btn-secondary">-</button>
+            <button onclick="updateTextSpacing(-1, true, false)" type="button" class="btn btn-secondary">+</button>
+            <button onclick="updateTextSpacing(-1, false, true)" type="button" class="btn btn-secondary">-</button>
             <input id="textspacing" type="text" placeholder="Text Spacing">
             <button onclick="updateTextSpacing(1, false, false)">Submit</button>
             <br>
 
         <br>
-        <button type="button" id="dark_mode" class="btn btn-primary">Toggle Dark Mode</button>
+        <button type="button" onclick="updateDarkMode(true)" class="btn btn-primary">Toggle Dark Mode</button>
 
     </div>
 
@@ -87,7 +87,10 @@
 
 <div class="element_box">
 
-
+<p>
+    Choose from 5 different sorting algorithms to read information about and test. When you run a test, the steps
+    the algorithm took display next to each pass. 
+</p>
 
 </div>
 
