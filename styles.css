@@ -98,13 +98,11 @@ body {
 
 #ruler { visibility: hidden; white-space: nowrap; } /* https://blog.mastykarz.nl/measuring-the-length-of-a-string-in-pixels-using-javascript/ */
 
-.info_box {
+.info-box {
 
     padding-left: 20rem;
     padding-right: 20rem;
     padding-top: 5rem;
-    font-size: var(--text-size);
-    letter-spacing: var(--text-spacing);
 
 }
 
