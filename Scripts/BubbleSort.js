@@ -12,11 +12,11 @@ function Sorting_Algorithm(arr) {
     let result_j = "";
     let swapped_elements_size = 0;
 
-    while(true){ // while not sorted yet
+    while (true) { // while not sorted yet
 
-        while(i < size - 1){ // for each element minus the last element
+        while (i < size - 1) { // for each element minus the last element
 
-            if (arr[i] > arr[i + 1]){ // if the curr element is greater than the element after
+            if (arr[i] > arr[i + 1]) { // if the curr element is greater than the element after
 
                 // swap elements
                 temp = arr[i];
@@ -32,7 +32,7 @@ function Sorting_Algorithm(arr) {
         swapped_elements_size = swapped_elements.length;
         if (swapped_elements_size > 0) { // if swapped
 
-            for(let j = 0; j < swapped_elements_size; j++){
+            for (let j = 0; j < swapped_elements_size; j++) {
 
                 result_j += "Swapped " + swapped_elements[j][1].toString() + " and " + swapped_elements[j][0].toString();
                 if (j < swapped_elements_size - 1) { result_j += ", "; } // if not the last element, add a comma
