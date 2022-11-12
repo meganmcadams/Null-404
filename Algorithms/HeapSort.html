@@ -86,17 +86,16 @@
     <div class="element_inner_right">
         <h4>Description</h4>
         <p>
-        Bubble sort is a sorting algorithm that iterates through a given array and swaps two elements if the left one is bigger than the right one. Its time complexity is 
-        O(n^2) since, in the worst case scenario, it would iterate through the array n times while swapping elements at every iteration. 
+        Heap sort is a sorting algorithm that utilizes binary trees to sort the array. It creates a max binary tree,
+        then removes the max element to place it last in the resulting array. Its time complexity is O(N log N).
         </p><br>
 
         <h4>Step-By-Step</h4>
         <p>
-        1. Starting at index 0... <br>
-        2. If the current element is greater than the next element, swap the elements <br>
-        3. Increment index <br>
-        4. Repeat steps 2 through 3 until reaching the last element <br>
-        5. Repeat steps 1 through 4 until no swaps occur <br>
+        1. Build a binary tree <br>
+        2. Create a max heap <br>
+        3. Remove the max element and place at the end of the resulting array <br>
+        4. Repeat steps 2 and 3 until all elements have been removed <br>
         </p>
     </div>
 

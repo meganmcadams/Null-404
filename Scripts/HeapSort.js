@@ -2,8 +2,6 @@
 // comes from https://www.geeksforgeeks.org/insertion-sort/
 
 function heapify(array, n, i, passes) {
-
-    passes.push([[...arr], "Heapifying..."]);
     
     big_i = i; // biggest index defaulted to i
     left = 2 * i + 1; // left 
@@ -12,14 +10,12 @@ function heapify(array, n, i, passes) {
     if (left < n && array[left] > array[big_i]) { // if left is new biggest
 
         big_i = left; // set biggest index to left
-        passes.push([[...arr], "Set biggest index to left..."]);
 
     }
 
     if (right < n && array[right] > array[big_i]) { // if right is new biggest
 
         big_i = right; // set right to biggest
-        passes.push([[...arr], "Set biggest index to right..."]);
 
     } 
     
@@ -49,7 +45,7 @@ function Sorting_Algorithm(array) {
 
     }
 
-    passes.push([[...arr], "Heapified"]);
+    passes.push([[...arr], "Created a max binary tree"]);
 
     i = n - 1
     while (i > 0) {
