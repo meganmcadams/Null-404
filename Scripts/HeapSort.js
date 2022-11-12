@@ -1,19 +1,19 @@
 // Understanding of algorithm and basis for implementation
 // comes from https://www.geeksforgeeks.org/insertion-sort/
 
-function heapify(array, n, i, passes) {
+function heapify(arr, n, i, passes) {
     
     big_i = i; // biggest index defaulted to i
     left = 2 * i + 1; // left 
     right = 2 * i + 2; // right
 
-    if (left < n && array[left] > array[big_i]) { // if left is new biggest
+    if (left < n && arr[left] > arr[big_i]) { // if left is new biggest
 
         big_i = left; // set biggest index to left
 
     }
 
-    if (right < n && array[right] > array[big_i]) { // if right is new biggest
+    if (right < n && arr[right] > arr[big_i]) { // if right is new biggest
 
         big_i = right; // set right to biggest
 
@@ -21,26 +21,26 @@ function heapify(array, n, i, passes) {
     
     if (big_i != i) { // if biggest index isn't i
         // swap array[i] and array[big_i]
-        temp = array[i];
-        array[i] = array[big_i];
-        array[big_i] = temp;
+        temp = arr[i];
+        arr[i] = arr[big_i];
+        arr[big_i] = temp;
 
-        heapify(array, n, big_i, passes); // recursive call with biggest index
+        heapify(arr, n, big_i, passes); // recursive call with biggest index
 
     }
 
 }
 
-function Sorting_Algorithm(array) {
+function Sorting_Algorithm(arr) {
 
     let passes = [[[...arr],"Initial array"]]; // initialize passes array with the original arr
 
-    n = array.length; // get length of array
+    n = arr.length; // get length of array
 
     i = n; // 2 - 1 # set i
     while (i >= 0) {
 
-        heapify(array, n, i, passes);
+        heapify(arr, n, i, passes);
         i -= 1; // decrement i
 
     }

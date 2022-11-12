@@ -3,7 +3,7 @@
 
 function Sorting_Algorithm(arr) {
 
-    let passes = [[...arr]]; // initialize passes array with the original arr
+    let passes = [[[...arr],"Initial array"]]; // initialize passes array with the original arr
 
     const size = arr.length;
 
@@ -21,11 +21,11 @@ function Sorting_Algorithm(arr) {
 
         if (hole != i) {
 
-            array[hole] = val
+            arr[hole] = val
 
         }
 
-        passes.push([...arr]);
+        passes.push([[...arr], "Index " + i.toString()]);
 
     }
 
