@@ -51,6 +51,7 @@
 
 .nav-link:hover {
 
+    transition-property: filter;
     transition-duration: 0.5s;
     
 }
