@@ -88,18 +88,16 @@
     <div class="element_inner_right">
         <h4>Description</h4>
         <p>
-        Insertion sort is similar to bubble sort in that it iterates through a given array, swapping elements if the previous is greater
-        than the next. However, after swapping an element, it backtracks and continues swapping until the element is in the correct place
-        relative to index 0 to the current index. Its runtime complexity is O(N^2).
+        Merge sort is a recursive sorting algorithm that divides the given array into left and right arrays. It sorts each
+        part of the array (left and right) before merging them. When merging, it compares the size of each side to created
+        a sorted merged array.
         </p><br>
 
         <h4>Step-By-Step</h4>
         <p>
-        1. Compare i and i + 1 <br>
-        2. Swap if i + 1 is greater than i <br>
-        3. Move index down 1 <br>
-        4. Repeat steps 1 through 3 until index 0 to original position is sorted <br>
-        5. Repeat steps 1 through 4 until the end of the array is reached <br>
+        1. Split array into left and right <br>
+        2. If size of left or right is less than or equal to 1, merge and sort <br>
+        3. Else, recursive call for left and right arrays <br>
         </p>
     </div>
 
