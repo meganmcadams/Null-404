@@ -29,6 +29,7 @@ function Sorting_Algorithm(arr) {
 
     }
 
+    passes.push([[...arr], "Final array"]);
     return passes;
 
 }

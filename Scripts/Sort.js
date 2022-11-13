@@ -36,8 +36,8 @@ function convertArrayToDisplay(passes) {
         for (let j = 0; j < element_size; j++) { // for each element in the current pass
 
             result += passes[i][0][j].toString(); // add the current element
-            if (j < element_size - 1) { result += ", "; } // if is not the end, add a comma
-            else { result += " | " + passes[i][1] + "<br>"; } // if it is the end, add the pass desc and a newline
+            if (j < element_size - 1 && passes[i][0][j + 1] != undefined) { result += ", "; } // if is not the end, add a comma
+            else { result += " | " + passes[i][1] + "<br>"; break; } // if it is the end, add the pass desc and a newline
 
         }
 
