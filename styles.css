@@ -17,6 +17,8 @@
 
     --title-left-correct: 50%;
 
+    --font: "Cambria";
+
 }
 
 /* navbar modifictions */
@@ -92,6 +94,7 @@ body {
     color: var(--text-colour);
     font-size: var(--text-size);
     letter-spacing: var(--text-spacing);
+    font-family: var(--font);
 
 }
 

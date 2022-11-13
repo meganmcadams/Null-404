@@ -11,6 +11,8 @@ if(JSON.parse(localStorage.getItem('first_time')) == null){ // first time setup
   localStorage.setItem('dark_mode', false);
   localStorage.setItem('text_size', JSON.stringify(cs.getPropertyValue('--text-size')));
   localStorage.setItem('text_spacing', JSON.stringify(cs.getPropertyValue('--text-spacing')));
+  localStorage.setItem('font', JSON.stringify(cs.getPropertyValue('--font')));
+  console.log(":",JSON.stringify(cs.getPropertyValue('--font')));
   
 }
 
@@ -34,9 +36,14 @@ r.style.setProperty('--text-spacing',text_spacing);
 
 let dark_mode = JSON.parse(localStorage.getItem('dark_mode'));
 
+let font = JSON.parse(localStorage.getItem('font'));
+let default_font = " \"Arial\"";
+let dyslexia_friendly_font = " \"Open_Dyslexia\"";
+
 let sidebar_out = false;
 
 updateDarkMode(false);
+updateFont(false);
 
 // initialize variables as needed --------------------------
 
@@ -98,6 +105,27 @@ function updateDarkMode(toggle) {
   }
 
   localStorage.setItem('dark_mode', JSON.stringify(dark_mode)); // https://stackoverflow.com/questions/29986657/persist-variables-between-page-loads
+
+}
+
+function updateFont(toggle) {
+
+  if (toggle == true) { // if should toggle
+    if (font == default_font) {font = dyslexia_friendly_font; }
+    else { font = default_font; }
+  }
+
+  if(font == dyslexia_friendly_font){ // dyslexia friendly
+
+    r.style.setProperty('--font', dyslexia_friendly_font); // https://www.w3schools.com/css/css3_variables_javascript.asp
+  
+  } else { // non-dyslexia friendly
+  
+    r.style.setProperty('--font', default_font); // https://www.w3schools.com/css/css3_variables_javascript.asp
+  
+  }
+
+  localStorage.setItem('font', JSON.stringify(font)); // https://stackoverflow.com/questions/29986657/persist-variables-between-page-loads
 
 }
 
