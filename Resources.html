@@ -57,21 +57,23 @@
         <h4 class="static_colour_black">Accessibility Settings</h4>
 
         <!-- Text Size -->
-            <button onclick="updateTextSize(-1, true, false)" type="button" class="btn btn-secondary">+</button>
-            <button onclick="updateTextSize(-1, false, true)" type="button" class="btn btn-secondary">-</button>
-            <input id="textsize" type="text" placeholder="Text Size">
-            <button onclick="setTextSize()">Submit</button>
-            <br>
+        <button onclick="updateTextSize(-1, true, false)" type="button" class="btn btn-secondary">+</button>
+        <button onclick="updateTextSize(-1, false, true)" type="button" class="btn btn-secondary">-</button>
+        <input id="textsize" type="text" placeholder="Text Size">
+        <button onclick="setTextSize()">Submit</button>
+        <br><br>
 
         <!-- Text Spacing -->
             <button onclick="updateTextSpacing(-1, true, false)" type="button" class="btn btn-secondary">+</button>
             <button onclick="updateTextSpacing(-1, false, true)" type="button" class="btn btn-secondary">-</button>
             <input id="textspacing" type="text" placeholder="Text Spacing">
             <button onclick="updateTextSpacing(1, false, false)">Submit</button>
-            <br>
+            <br><br>
 
-        <br>
         <button type="button" onclick="updateDarkMode(true)" class="btn btn-primary">Toggle Dark Mode</button>
+        <br><br>
+        
+        <button type="button" onclick="updateFont(true)" class="btn btn-primary">Toggle Dyslexia-Friendly Font</button>
 
     </div>
 
