@@ -50,11 +50,11 @@ function Sorting_Algorithm(arr) {
     i = n - 1
     while (i > 0) {
         // swap array[0] and array[i]
-        temp = array[0];
-        array[0] = array[i];
-        array[i] = temp;
+        temp = arr[0];
+        arr[0] = arr[i];
+        arr[i] = temp;
 
-        heapify(array, i, 0, passes);
+        heapify(arr, i, 0, passes);
         i -= 1; // decrement i
 
     }
