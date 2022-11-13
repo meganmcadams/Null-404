@@ -41,9 +41,9 @@ updateDarkMode(false);
 // initialize variables as needed --------------------------
 
 // title left value - this does nothing right now because i can't figure it out -meg
-var title_text = title.innerHTML;
-ruler.innerHTML = title_text;
-ruler.offsetWidth;
+//var title_text = title.innerHTML;
+//ruler.innerHTML = title_text;
+//ruler.offsetWidth;
 
 // functions --------------------------------------------------
 
